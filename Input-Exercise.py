@@ -469,3 +469,36 @@
 #
 # print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 #
+
+# Exercise of
+# import random
+import random
+lowest_num = 1
+highest_num = 100
+answer = random.randint(lowest_num, highest_num)
+guesses = 0
+is_running = True
+
+print('Let us do a number guessing game.')
+print(f'Select a number in {lowest_num} and {highest_num}')
+while True:
+
+    guess = input('Enter your guess: ')
+    if guess.isdigit():
+        guess = int(guess)
+        guesses += 1
+
+        if guess < lowest_num or guess > highest_num:
+            print('Out of range!')
+        elif guess < answer:
+            print('Too low, try again.')
+        elif guess > answer:
+            print('Too high, try again')
+        else:
+            print('Correct.')
+            print(f'You made {guesses} guesses in total.')
+            break
+
+
+    else:
+        print('Invalid.')
