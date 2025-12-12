@@ -502,3 +502,31 @@ while True:
 
     else:
         print('Invalid.')
+
+# Exercise of 
+import random
+option = ('rock', 'paper', 'scissors')
+player = None
+computer = random.choice(option)
+while True:
+    player = input(f'Enter the {option}: ')
+    while player not in option:
+        player = input(f'Enter the {option}: ')
+
+    print(f'player: {player}')
+    print(f'computer: {computer}')
+
+    if player == computer:
+        print('It is a tie.')
+    elif player == 'rock' and computer == 'scissors':
+        print('Player is the winner!')
+    elif player == 'paper' and computer == 'rock':
+        print('Player is the winner!')
+    elif player == 'scissors' and computer == 'paper':
+        print('Player is the winner!')
+    else:
+        print('Defeat!')
+    play_again = input('Another round? (Y/N): ').upper()
+    if not play_again == 'Y':
+        break
+
