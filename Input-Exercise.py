@@ -130,14 +130,14 @@ for key, value in menu.items():
 print(f'{key:10}: ${value:.2f}.')
 print('🍿🍿🍿Show what you get here!🍿🍿🍿')
 while True:
-food = input('Select the item(q to quit): ')
-if food.lower() == 'q'
-    break
+  food = input('Select the item(q to quit): ')
+    if food.lower() == 'q'
+      break
     elif menu.get(food) is not None:
       cart.append(food)
-for food in cart:
+    for food in cart:
     total = total + menu.get(food)
-print(food, end=' ')
+    print(food, end=' ')
 print()
 print(f'Total is ${total:.2f}')
 
@@ -586,6 +586,7 @@ print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 # #       print(f'{key}:{value}')
 #
 #
+
 
 
 
