@@ -1,3 +1,149 @@
+import random
+# print('\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518')
+# ● ┌ ─ ┐ │ └ ┘
+'┌─────────┐'
+'│         │'
+'│    ●    │'
+'│         │'
+'└─────────┘'
+dice_art = {1: ('┌─────────┐',
+                '│         │',
+                '│    ●    │',
+                '│         │',
+                '└─────────┘'),
+            2: ('┌─────────┐',
+                '│  ●      │',
+                '│         │',
+                '│      ●  │',
+                '└─────────┘'),
+            3: ('┌─────────┐',
+                '│  ●      │',
+                '│    ●    │',
+                '│      ●  │',
+                '└─────────┘'),
+            4: ('┌─────────┐',
+                '│  ●   ●  │',
+                '│         │',
+                '│  ●   ●  │',
+                '└─────────┘'),
+            5: ('┌─────────┐',
+                '│  ●   ●  │',
+                '│    ●    │',
+                '│  ●   ●  │',
+                '└─────────┘'),
+            6: ('┌─────────┐',
+                '│  ●   ●  │',
+                '│  ●   ●  │',
+                '│  ●   ●  │',
+                '└─────────┘')}
+
+dice = []
+total = 0
+num_of_dice = int(input('How many dice?: '))
+
+for die in range(num_of_dice):
+    dice.append(random.randint(1, 6))
+
+for die in range(num_of_dice):
+    for line in dice_art.get(dice[die]):
+# explain dice_art.get(dice[roll])
+# “For each line that belongs to the dice value I rolled…”
+        print(line)
+
+for line in range(5):
+    for die in range(num_of_dice):
+        print(dice_art.get(dice[die])[line], end='')
+    print()
+
+for die in dice:
+    total += die
+print(total)
+
+--------------------------------------------------------------------------------------------------------------------------------
+import random
+option = ('rock', 'paper', 'scissors')
+player = None
+computer = random.choice(option)
+while True:
+    player = input(f'Enter the {option}: ')
+    while player not in option:
+        player = input(f'Enter the {option}: ')
+
+    print(f'player: {player}')
+    print(f'computer: {computer}')
+
+    if player == computer:
+        print('It is a tie.')
+    elif player == 'rock' and computer == 'scissors':
+        print('Player is the winner!')
+    elif player == 'paper' and computer == 'rock':
+        print('Player is the winner!')
+    elif player == 'scissors' and computer == 'paper':
+        print('Player is the winner!')
+    else:
+        print('Defeat!')
+    play_again = input('Another round? (Y/N): ').upper()
+    if not play_again == 'Y':
+        break
+-----------------------------------------------------------------------------------------------------------------------------
+import random
+lowest_num = 1
+highest_num = 100
+answer = random.randint(lowest_num, highest_num)
+guesses = 0
+is_running = True
+
+print('Let us do a number guessing game.')
+print(f'Select a number in {lowest_num} and {highest_num}')
+while True:
+
+    guess = input('Enter your guess: ')
+    if guess.isdigit():
+        guess = int(guess)
+        guesses += 1
+
+        if guess < lowest_num or guess > highest_num:
+            print('Out of range!')
+        elif guess < answer:
+            print('Too low, try again.')
+        elif guess > answer:
+            print('Too high, try again')
+        else:
+            print('Correct.')
+            print(f'You made {guesses} guesses in total.')
+            break
+
+
+    else:
+        print('Invalid.')
+----------------------------------------------------------------------------------------------------------------------
+# Program of concession stand in Dictionaries
+menu = {'plum': 2.00,
+        'peach': 3.78,
+        'popcorn': 6.90,
+        'butter': 1.99,
+        'beer': 3.50}
+cart = []
+total = 0
+print('♥♥♥♥♥♥Welcome to Cams Shop♥♥♥♥♥♥')
+for key, value in menu.items():
+print(f'{key:10}: ${value:.2f}.')
+print('🍿🍿🍿Show what you get here!🍿🍿🍿')
+while True:
+food = input('Select the item(q to quit): ')
+if food.lower() == 'q'
+    break
+    elif menu.get(food) is not None:
+      cart.append(food)
+for food in cart:
+    total = total + menu.get(food)
+print(food, end=' ')
+print()
+print(f'Total is ${total:.2f}')
+
+print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
+----------------------------------------------------------------------------------------------------------------------
+
 # input() = A function that PROMPTS the user to enter data
 #           Returns the entered data as a STRING
 #
@@ -439,94 +585,10 @@
 # # for key, value in capitals.items():
 # #       print(f'{key}:{value}')
 #
-# # Exercise of concession stand program
-# # In Dictionaries
-#
-# menu = {'plum': 2.00,
-#         'peach': 3.78,
-#         'popcorn': 6.90,
-#         'butter': 1.99,
-#         'beer': 3.50}
-# cart = []
-# total = 0
-# print('♥♥♥♥♥♥Welcome to Cams Shop♥♥♥♥♥♥')
-# for key, value in menu.items():
-#     print(f'{key:10}: ${value:.2f}.')
-# print('🍿🍿🍿Show what you get here!🍿🍿🍿')
-# while True:
-#     food = input('Select the item(q to quit): ')
-#     if food.lower() == 'q':
-#         break
-#     elif menu.get(food) is not None:
-#         cart.append(food)
-#
-# for food in cart:
-#     total = total + menu.get(food)
-#     print(food, end=' ')
-# print()
-# print(f'Total is ${total:.2f}')
-#
-#
-# print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 #
 
-# Exercise of
-# import random
-import random
-lowest_num = 1
-highest_num = 100
-answer = random.randint(lowest_num, highest_num)
-guesses = 0
-is_running = True
-
-print('Let us do a number guessing game.')
-print(f'Select a number in {lowest_num} and {highest_num}')
-while True:
-
-    guess = input('Enter your guess: ')
-    if guess.isdigit():
-        guess = int(guess)
-        guesses += 1
-
-        if guess < lowest_num or guess > highest_num:
-            print('Out of range!')
-        elif guess < answer:
-            print('Too low, try again.')
-        elif guess > answer:
-            print('Too high, try again')
-        else:
-            print('Correct.')
-            print(f'You made {guesses} guesses in total.')
-            break
 
 
-    else:
-        print('Invalid.')
 
-# Exercise of 
-import random
-option = ('rock', 'paper', 'scissors')
-player = None
-computer = random.choice(option)
-while True:
-    player = input(f'Enter the {option}: ')
-    while player not in option:
-        player = input(f'Enter the {option}: ')
 
-    print(f'player: {player}')
-    print(f'computer: {computer}')
-
-    if player == computer:
-        print('It is a tie.')
-    elif player == 'rock' and computer == 'scissors':
-        print('Player is the winner!')
-    elif player == 'paper' and computer == 'rock':
-        print('Player is the winner!')
-    elif player == 'scissors' and computer == 'paper':
-        print('Player is the winner!')
-    else:
-        print('Defeat!')
-    play_again = input('Another round? (Y/N): ').upper()
-    if not play_again == 'Y':
-        break
 
