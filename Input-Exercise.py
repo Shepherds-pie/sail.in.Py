@@ -1,3 +1,52 @@
+# function = a block of reusable code
+#           place () after the function name to invoke it.
+# write the code once and reuse it whenever I need to.
+# to define the function, type def, then type the function name after def. add ():
+# to invoke the function, place () after the function name to invoke it
+def happy_birthday ():
+    print(f'happy_birthday to you!')
+    print(f'You are older.')
+happy_birthday()
+happy_birthday()
+happy_birthday()
+# you can also send values or variables directly to the functions.
+# so, place any data within ()
+def happy_birthday (name):
+    print(f'happy birthday to {name}!')
+    print(f'You are older.')
+    print()
+happy_birthday('Louis')
+# 'Louis' is an argument, which is the actual value passed into the function.
+# we need a matching set of parameters, arguments are assigned to parameters, which are the variables defined in the function signature.
+# so to define the function above, a parameter is name. It is variable.
+def happy_birthday (name, age):
+    print(f'Happy birthday to {name}!')
+    print(f'You are {age} years old.')
+    print(f'Happy birthday to you.🎂')
+    print()
+happy_birthday('Louis', 40)
+happy_birthday('Judy', 22)
+happy_birthday('Cam', 32)
+# now you can add more arguments. and matching parameters
+# to reuse the function, just copy it.
+
+def display_invoice(name, amount, due_date):
+    print(f'Hello, {name}')
+    print(f'This is ${amount:.2f}')
+    print(f'The due is {due_date}')
+display_invoice('Cindy', 60, '12/25/2026')
+
+# return = statement used to end a function
+#          and send a result back to the caller
+
+def create_name(first, last):
+    first = first.capitalize()
+    last = last.capitalize()
+    return first + ' ' + last
+full_name = create_name('cam', 'shepherd')
+print(full_name)
+
+----------------------------------------------------------------------------------------------------------------
 import random
 # print('\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518')
 # ● ┌ ─ ┐ │ └ ┘
@@ -586,6 +635,7 @@ print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 # #       print(f'{key}:{value}')
 #
 #
+
 
 
 
