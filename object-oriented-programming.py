@@ -1,3 +1,41 @@
+import time
+def count(end, start=0):
+    for x in range(start, end+1):
+        time.sleep(1)
+        print(x)
+    print('DONE.')
+count(10)
+
+import time
+def count_down(start, end):
+    for x in range(start, end, -1):
+        time.sleep(1)
+        print(x)
+    print('DONE')
+count_down(10, -1)
+------------------------------------------------------------------------------------------------------------------------------------
+
+import time
+time.sleep(3)
+print('It is time to get up.')
+
+# import time module, use sleep function within time module to sleep for a given amount of time.
+# Notes: why second = x % 60, because x // 60 = full minutes. x % 60 = remainder of seconds after removing the removing full minutes.
+# suppose x = 125 seconds  example: (minutes) = 125 // 60   # 2   seconds = 125 % 60    # 5
+# // is integer division / is float division
+
+import time
+timer_set = int(input('Enter the time in seconds: '))
+for x in range(timer_set, -1, -1):
+    second = x % 60
+    minutes = (x % 3600) // 60
+    hour = x // 3600
+    print(f'{hour:02}:{minutes:02}:{second:02}')
+    time.sleep(1)
+
+print(f'Pass!')
+
+---------------------------------------------------------------------------------------------------------
 # function = a block of reusable code
 #           place () after the function name to invoke it.
 # write the code once and reuse it whenever I need to.
@@ -635,6 +673,7 @@ print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 # #       print(f'{key}:{value}')
 #
 #
+
 
 
 
