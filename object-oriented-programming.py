@@ -8,11 +8,11 @@ count(10)
 
 import time
 def count_down(start, end):
-    for x in range(start, end, -1):
+    for x in range(start, end-1, -1):
         time.sleep(1)
         print(x)
     print('DONE')
-count_down(10, -1)
+count_down(10, 0)
 ------------------------------------------------------------------------------------------------------------------------------------
 
 import time
@@ -673,6 +673,7 @@ print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 # #       print(f'{key}:{value}')
 #
 #
+
 
 
 
