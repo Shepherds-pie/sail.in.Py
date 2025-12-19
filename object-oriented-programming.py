@@ -1,3 +1,12 @@
+# keyword arguments
+def get_phone_number(country, area, first, last):
+    return f'{country}-{area}-{first}-{last}'
+phone_number = get_phone_number(country='(+86)', area=291, first=6344, last=8080)
+print(f'You can text me on {phone_number}')
+
+------------------------------------------------------------------------------------------------------------
+
+# default arguments
 import time
 def count(end, start=0):
     for x in range(start, end+1):
@@ -673,6 +682,7 @@ print('🙂🙂🙂Thank you for choosing us.🙂🙂🙂')
 # #       print(f'{key}:{value}')
 #
 #
+
 
 
 
